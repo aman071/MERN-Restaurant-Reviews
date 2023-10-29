@@ -6,6 +6,14 @@ import restaurants from "./api/restaurants.route.js"
 const app=express()
 app.use(cors())
 
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-1whq.vercel.app"],
+        methods: ["POST", "GET", "PUT"],
+        credentials: true
+    }
+))
+
 /*
 Earlier version required us to explicitly use bodyParser also
 But newer versions has body parser included in request. It means
